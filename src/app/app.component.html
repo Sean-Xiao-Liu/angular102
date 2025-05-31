@@ -1,1 +1,8 @@
-<app-header></app-header>
+<app-header />
+<app-user-input
+  (showResults)="onShowResults($event)"
+  (results)="onResults($event)"
+/>
+@if (showResults) {
+<app-investments-result [results]="results" />
+}
