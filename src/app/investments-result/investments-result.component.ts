@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { Result } from '../result.model';
 import { CommonModule } from '@angular/common';
 
@@ -10,5 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class InvestmentsResultComponent {
-  @Input() results: Result[] = [];
+  // @Input() results: Result[] = [];
+  // use signal to pass data instead of @Input
+  results = input.required<Result[]>();
 }
